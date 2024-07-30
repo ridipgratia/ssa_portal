@@ -11,6 +11,7 @@ use App\Rules\ValidatePhoneNumber;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 trait PublicTrait
 {
@@ -59,8 +60,7 @@ trait PublicTrait
                                 'name' => $request->name,
                                 'email_id' => $request->email,
                                 'phone_no' => $request->phone_number,
-                                'password' => $request->password,
-                                'remember_token' => ''
+                                'password' => Hash::make($request->password),
                             ]
                         );
                         if ($save_user) {

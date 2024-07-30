@@ -2,6 +2,7 @@
 
 namespace App\our_modules\reuse_modules;
 
+use App\Models\user_auth\UserCredentials;
 use Illuminate\Support\Facades\Validator;
 
 class ReuseModules
@@ -26,5 +27,23 @@ class ReuseModules
             $error_message
         );
         return $validator;
+    }
+    // ----------- find data -----------------
+    public static function findData($model,$query){
+        return UserCredentials::where($query)
+        ->get();
+    }
+    // ------------- update data --------------------
+    public static function updateData($model,$query,$values){
+        $model::where($query)
+        ->update($values);
+    }
+    // --------------- check is available -----------------
+    public static function isAvailable($model,$query)
+    {
+        $model = $model ? $model : new UserCredentials();
+        return $model::where(
+            $query
+        )->first();
     }
 }

@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-
-class UserCredentials extends Model
+use Illuminate\Foundation\Auth\User as Authenticatable;
+class UserCredentials extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     protected $guard = 'user_guard';
@@ -19,7 +19,7 @@ class UserCredentials extends Model
         'phone_no',
         'password',
         'remember_token',
-        ''
+        'active'
     ];
     protected $hidden = [
         'password'

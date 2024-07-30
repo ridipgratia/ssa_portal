@@ -42,7 +42,7 @@ class Handler extends ExceptionHandler
     public function register(): void
     {
         $this->reportable(function (Throwable $e) {
-            //
+            return response()->json(['status' => 301, 'message' => 'Unauthorized User'], 400);
         });
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\user_auth\UserCredentials;
+
 return [
 
     /*
@@ -40,6 +42,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'user_guard' => [
+            'driver' => 'session',
+            'provider' => 'user_protect'
+        ]
     ],
 
     /*
@@ -64,6 +70,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
+        'user_protect' => [
+            'driver' => 'eloquent',
+            'model' => UserCredentials::class
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

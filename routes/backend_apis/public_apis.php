@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\user_auth\UserAuthController;
+use App\Http\Controllers\public_controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
 // ----------------- create account ---------------
-Route::post('/create-account', [UserAuthController::class, 'createAccount']);
+Route::post('/create-account', [PublicController::class, 'createAccount']);

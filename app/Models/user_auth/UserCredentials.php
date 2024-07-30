@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 class UserCredentials extends Model
 {
     use HasApiTokens, HasFactory, Notifiable;
+    protected $guard = 'user_guard';
     protected $table = 'user_credentials';
     protected $fillable = [
         'unique_code',

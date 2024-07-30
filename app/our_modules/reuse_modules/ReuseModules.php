@@ -1,6 +1,6 @@
 <?php
 
-namespace App\our_module\reuse_module;
+namespace App\our_modules\reuse_modules;
 
 use Illuminate\Support\Facades\Validator;
 

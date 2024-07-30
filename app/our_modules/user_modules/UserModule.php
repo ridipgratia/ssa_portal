@@ -7,7 +7,7 @@ class UserModule
     // ----------------- generate unique code -----------------
     public static function generateUniqueCode($name)
     {
-        $name = strtoupper(substr($name, 0, 3));
+        $name = strtoupper(substr($name, 0, 1));
         return 'emp-' . $name . '/' . rand(1000, 9999) . '-';
     }
 }

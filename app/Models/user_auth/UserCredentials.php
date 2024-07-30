@@ -19,6 +19,7 @@ class UserCredentials extends Model
         'phone_no',
         'password',
         'remember_token',
+        ''
     ];
     protected $hidden = [
         'password'

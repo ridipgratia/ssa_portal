@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('email_id')->unique();
             $table->string('phone_no')->unique();
             $table->string('password');
-            $table->string('remember_token');
+            $table->string('remember_token')->nullable();
+            $table->integer('active')->default(1);
             $table->timestamps();
         });
     }
